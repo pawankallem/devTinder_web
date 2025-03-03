@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useState } from "react";
-import { Backend_Url } from "../constants";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../constants";
 
 const Login = () => {
   const [email, setEmail] = useState("pavan@gmail.com");
@@ -13,10 +13,8 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      console.log("details : ", email, password);
-
       const response = await axios.post(
-        Backend_Url + "/login",
+        API_URL + "/login",
         {
           email,
           password,
