@@ -2,7 +2,10 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { API_URL } from "../constants";
-import { removeUser } from "../utils/userSlice";
+import { clearFeed } from "../utils/feedSlice";
+import { clearRequests } from "../utils/requestsSlice";
+import { clearConnections } from "../utils/connectionSlice";
+import { clearUser } from "../utils/userSlice";
 
 const NavBar = () => {
   const user = useSelector((store) => store.user);
@@ -12,7 +15,10 @@ const NavBar = () => {
   const handleLogout = async () => {
     try {
       await axios.post(API_URL + "/logout", {}, { withCredentials: true });
-      dispatch(removeUser());
+      dispatch(clearUser());
+      dispatch(clearFeed());
+      dispatch(clearRequests());
+      dispatch(clearConnections());
       navigate("/login");
     } catch (error) {
       console.log("error : ", error);
