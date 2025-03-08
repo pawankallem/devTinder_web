@@ -1,18 +1,37 @@
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { API_URL } from "../constants";
+import { clearFeed } from "../utils/feedSlice";
+import { clearRequests } from "../utils/requestsSlice";
+import { clearConnections } from "../utils/connectionSlice";
+import { clearUser } from "../utils/userSlice";
 
 const NavBar = () => {
   const user = useSelector((store) => store.user);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (!user) navigate("/login");
-  }, [user]);
+  const handleLogout = async () => {
+    try {
+      await axios.post(API_URL + "/logout", {}, { withCredentials: true });
+      dispatch(clearUser());
+      dispatch(clearFeed());
+      dispatch(clearRequests());
+      dispatch(clearConnections());
+      navigate("/login");
+    } catch (error) {
+      console.log("error : ", error);
+      navigate("/login");
+    }
+  };
+
   return (
     <div className="navbar bg-base-300 shadow-sm">
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <Link to="/" className="btn btn-ghost text-xl">
+          DevTinder
+        </Link>
       </div>
       {user && (
         <div className="flex gap-2">
@@ -33,17 +52,28 @@ const NavBar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
-              <li>
-                <a className="justify-between">
+              {/* <li>
+                <Link to="/profile/view" className="justify-between">
                   Profile
-                  <span className="badge">New</span>
-                </a>
+                </Link>
+              </li> */}
+              <li>
+                <Link to="/profile/edit" className="justify-between">
+                  Edit Prfile
+                </Link>
               </li>
               <li>
-                <a>Settings</a>
+                <Link to="/connections" className="justify-between">
+                  Connections
+                </Link>
               </li>
               <li>
-                <a>Logout</a>
+                <Link to="/requests" className="justify-between">
+                  Request
+                </Link>
+              </li>
+              <li>
+                <a onClick={handleLogout}>Logout</a>
               </li>
             </ul>
           </div>

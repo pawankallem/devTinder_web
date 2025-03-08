@@ -11,8 +11,9 @@ const userSlice = createSlice({
       state = null;
       // return null ALSO WORKS
     },
+    clearUser: (state) => null,
   },
 });
 
-export const { addUser, removeUser } = userSlice.actions;
+export const { addUser, removeUser, clearUser } = userSlice.actions;
 export default userSlice.reducer;

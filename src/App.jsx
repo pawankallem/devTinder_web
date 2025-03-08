@@ -1,14 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-// import Body from "./Body";
-// import Login from "./Login";
-// import Temp from "./temp";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
-// import Feed from "./Feed";
 import Body from "./components/Body";
 import Feed from "./components/Feed";
 import Login from "./components/Login";
-import Temp from "./components/Temp";
+import Profile from "./components/Profile";
+import EditProfile from "./components/EditProfile";
+import Connections from "./components/Connections";
+import Requests from "./components/Requests";
 
 function App() {
   return (
@@ -16,10 +15,13 @@ function App() {
       <Provider store={appStore}>
         <BrowserRouter basename="/">
           <Routes>
+            <Route path="/login" element={<Login />} />
             <Route path="/" element={<Body />}>
               <Route path="/" element={<Feed />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/temp" element={<Temp />} />
+              <Route path="/profile/view" element={<Profile />} />
+              <Route path="/profile/edit" element={<EditProfile />} />
+              <Route path="/connections" element={<Connections />} />
+              <Route path="/requests" element={<Requests />} />
             </Route>
           </Routes>
         </BrowserRouter>
