@@ -27,11 +27,11 @@
 - Build the user card on feed
 - Edit profile feature
 - sho Toast message on save of profile
-<!-- // Pending after this line -->
+- Send / Ignore the user card from the feed
 - new page - see all my connections
 - New Page - see all my connection request
 - Feature - accept / reject connections request
-- Send / Ignore the user card from the feed
+<!-- // Pending after this line -->
 - Signup New User
 - End to End testing
 

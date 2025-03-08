@@ -44,7 +44,6 @@ const EditProfile = () => {
         { withCredentials: true }
       );
 
-      console.log("response : ", response);
       setShowToast(true);
       setTimeout(() => {
         setShowToast(false);
@@ -55,7 +54,7 @@ const EditProfile = () => {
   };
 
   return (
-    <div className="border-2 w-full h-full flex justify-center items-center border-red-200 gap-10 p-10">
+    <div className="bg-gray-100 w-full h-full flex justify-center items-center  gap-10 p-10">
       <div className="h-[70%] flex justify-center items-center">
         {userData && (
           <fieldset className="fieldset w-xs bg-base-200 border border-base-300 p-5 rounded-box">

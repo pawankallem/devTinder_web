@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { API_URL } from "../constants";
 
 const Login = () => {
-  const [email, setEmail] = useState("pavan@gmail.com");
-  const [password, setPassword] = useState("Pavan@123");
+  const [email, setEmail] = useState("linus@gmail.com");
+  const [password, setPassword] = useState("Linus@123");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -21,7 +21,6 @@ const Login = () => {
         },
         { withCredentials: true }
       );
-      console.log("response : ", response);
       dispatch(addUser(response.data.data));
       navigate("/");
     } catch (error) {
@@ -30,7 +29,7 @@ const Login = () => {
   };
 
   return (
-    <div className="h-full flex items-center justify-center my-[20%]">
+    <div className="bg-gray-100 h-full flex items-center justify-center">
       <div className="card bg-neutral text-neutral-content w-96">
         <div className="card-body items-center text-center">
           <h2 className="card-title">Login Here</h2>

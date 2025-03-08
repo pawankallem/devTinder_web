@@ -14,7 +14,6 @@ const Body = () => {
 
   const fetchUser = async () => {
     try {
-      console.log("here : ", user);
       if (user) return;
       const response = await axios.get(API_URL + "/profile/view", {
         withCredentials: true,
@@ -32,12 +31,17 @@ const Body = () => {
     fetchUser();
   }, []);
   return (
-    <div className="flex flex-col border-2 h-screen w-full">
-      <NavBar />
+    <div className="flex flex-col h-screen w-full">
+      <div className="h-[6%] ">
+        <NavBar />
+      </div>
 
-      <Outlet />
-
-      <Footer />
+      <div className="h-[88%] overflow-hidden">
+        <Outlet />
+      </div>
+      <div className="h-[6%] ">
+        <Footer />
+      </div>
     </div>
   );
 };

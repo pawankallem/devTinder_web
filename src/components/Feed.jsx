@@ -25,11 +25,13 @@ const Feed = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center border-2 h-full w-full">
-      {feedData ? (
+    <div className="flex justify-center items-center h-full w-full">
+      {feedData && feedData?.length > 0 ? (
         <UserCard usedFor="feed" user={feedData[0]} />
       ) : (
-        <h1>No New User</h1>
+        <h1 className="bg-gray-100 text-5xl font-bold flex items-center justify-center h-full w-full">
+          Currently There are No new Users Registered :-)
+        </h1>
       )}
     </div>
   );
