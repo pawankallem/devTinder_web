@@ -31,13 +31,22 @@
 - new page - see all my connections
 - New Page - see all my connection request
 - Feature - accept / reject connections request
-<!-- // Pending after this line -->
 - Signup New User
 - End to End testing
+<!-- // Pending after this line -->
 
-Body tag containes :
-NavBar
-Route=/ => Feed
-Route=/login => Login
-Route=/connections => Connections
-Route=/profile => Profile
+# FEATURES:
+
+### Login
+
+### Signup
+
+### Feed
+
+### Profile_Edit
+
+### Requests
+
+### Connections
+
+### Logout
