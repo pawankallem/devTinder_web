@@ -30,9 +30,9 @@ const Body = () => {
 
   useEffect(() => {
     fetchUser();
-  }, [user]);
+  }, []);
   return (
-    <div>
+    <div className="flex flex-col border-2 h-screen w-full">
       <NavBar />
 
       <Outlet />

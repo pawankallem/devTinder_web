@@ -22,8 +22,18 @@
 - You should not be access other routes without login
 - if token is not present, redirect user to login page
 - if token is there upon refresh make api call and update the store
-- logout
+- logout feature
+- Get the feed and add the feed in the store
+- Build the user card on feed
+- Edit profile feature
+- sho Toast message on save of profile
 <!-- // Pending after this line -->
+- new page - see all my connections
+- New Page - see all my connection request
+- Feature - accept / reject connections request
+- Send / Ignore the user card from the feed
+- Signup New User
+- End to End testing
 
 Body tag containes :
 NavBar
