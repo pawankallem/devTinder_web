@@ -6,6 +6,7 @@ import { clearFeed } from "../utils/feedSlice";
 import { clearRequests } from "../utils/requestsSlice";
 import { clearConnections } from "../utils/connectionSlice";
 import { clearUser } from "../utils/userSlice";
+import logo from "../assets/Logo.png";
 
 const NavBar = () => {
   const user = useSelector((store) => store.user);
@@ -30,6 +31,7 @@ const NavBar = () => {
     <div className="navbar bg-base-300 shadow-sm">
       <div className="flex-1">
         <Link to="/" className="btn btn-ghost text-xl">
+          <img className="w-[28px] h-[28px] rounded-[50%]" src={logo} alt="" />
           DevTinder
         </Link>
       </div>
