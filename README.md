@@ -1,3 +1,90 @@
+<h1 align="center" id="title">DevTinder</h1>
+
+<br>
+
+<p align="center"><img src="https://socialify.git.ci/pawankallem/devTinder_web/image?language=1&amp;owner=1&amp;name=1&amp;stargazers=1&amp;theme=Light" alt="project-image"></p>
+
+### Our site is deployed here https://codehub.world/ Please Check it out
+
+<br>
+
+<p id="description">DevTinder is a developer networking platform inspired by Tinder’s interaction model allowing developers to connect collaborate and build meaningful professional relationships. The frontend is built using React Redux Toolkit Tailwind CSS and DaisyUI ensuring a seamless and responsive user experience.</p>
+
+<br>
+
+# Uses :
+
+We can sign in Login, Signup, User Feed, Connection Requests, Current Connectioins, Logout
+
+# Pages Build
+
+<br>
+
+<h2>Project Screenshots:</h2>
+
+<br>
+
+Login:
+
+![Screenshot 2025-03-10 183750](https://github.com/user-attachments/assets/71056a30-e9de-4fca-a7ad-344a5a8443bc)
+
+Signup :
+
+![Screenshot 2025-03-10 183737](https://github.com/user-attachments/assets/1d334430-701e-41ae-9c42-34e5868f0233)
+
+# Funtionallity Added
+
+<br>
+
+- Signup
+- Login
+- Users Feed
+- Connection Requests Recieved
+- Connection list
+- Logout
+- Routing and Authentication
+
+<br>
+
+# Tech Stack Used
+
+<br>
+
+- Reactjs
+- Redux-Toolkit
+- Daisy UI
+- Tailwind
+- Nodejs
+- Expressjs
+- Mongodb
+
+<br>
+
+# How To Clone Our Project
+
+```
+$ Open GitBash
+$ git clone https://github.com/pawankallem/devTinder_web
+$ cd devTinder_web
+$ npm install
+$ npm build
+$ npm run preview
+```
+
+<br>
+
+# Note
+
+All the images and icon links have been taken from main website and some other internet sources and may be subject to copyright so try not to use the images or icons for business purposes or reproduce them without their approval on the owner of the images and icons used here are just for the making this project and for learning purpose.
+
+<br>
+<br>
+<br>
+
+# Below How I planned to develope code in frontend
+
+<!-- ------------------------------------------ -->
+
 # DevTinder
 
 - Create a Vite + React application
@@ -131,3 +218,21 @@
     - wait for sometime till the nameservers are updated ( mine took 20 mins)
     - DNS record: A codehub.world map to <ip> with ( A ) name
     - there are ( CName ) also
+
+# Sending Emails via SES
+
+        - Create a IAM user
+        - Give access to AmazonSES full access
+        - Amazon SES: Create an Identity
+        - Verify your Domain name
+        - Verify an Email Address
+        - Install AWS SDK - v3
+        - code examples :- https://github.com/awsdocs/aws-doc-sdk-examples/blob/main/javascriptv3/example_code/ses/src/ses_sendemail.js
+        - Setup SESClient
+        - Access Credentials should be created in IAM > under security credentials Tab
+        - Add the credentials to the .env file
+        - write code for sesClient
+        - write code for sending email address
+        - Make the email dynamic by passing more params to the run functions
+
+<!-- ------------------------------------------ -->
