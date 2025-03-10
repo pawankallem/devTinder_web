@@ -20,9 +20,10 @@ const Body = () => {
       });
       dispatch(addUser(response.data));
     } catch (error) {
-      console.log("error : ", error);
+      console.log("error 111111111111 : ", error);
+      navigate("/login");
       if (error.status === 401) {
-        navigate("/login");
+        console.log("unauth : ")
       }
     }
   };
